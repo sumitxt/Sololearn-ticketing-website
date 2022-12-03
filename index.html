@@ -1,0 +1,143 @@
+<html>
+<head>
+    <style>
+    h1{
+        font-size:20px;
+        letter-spacing:2px;
+        padding:10px;
+    }
+    label{
+        font-size:16px;
+        font-weight:bold;
+    }
+    strong{
+        color:#2493df;
+    }
+        footer{
+            color:#595959;
+            font-size:14px;
+            text-align:center;
+        }
+        section{
+            background-color:white;
+        }
+        li{
+            list-style-type:square;
+            list-style-position:inside;
+            padding: 0 0 0 
+        }
+        td, th {
+  border: 1px solid black;
+  padding: 10px;
+ }
+ th{
+     background-color:#2493df
+ }
+ .number{
+     padding:2px;
+     text-align:center;
+     width:50px
+ }
+ .button{
+    border:none;
+    background-color: #2493df;
+    font-size:16px;
+    font-weight:700;
+    height:40px;
+    width:100%
+
+ }
+ form{
+     display:flex;
+ }
+ .form-section{
+     flex:1;
+ }
+ #imageTag{
+     right:10px;
+     float:left;
+ }
+ p{
+     text-align:justify;
+ }
+ #buy {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+    </style>
+    <script>
+        let adults=42
+        let children=8
+        
+        if(adults<0){
+            adults=0;
+        }
+        if(children<0){
+            children=0;
+        }
+
+
+        for(let i=1;i<=adults;i++){
+            console.log("Ticket #"+i)
+        }
+
+        calc=(adults,children)=>{
+            return adults*12 + children*6;
+        }
+         window.onload = function() {
+  let btn = document.getElementById("buyBtn");
+  btn.onclick = function() {
+    let adults = document.getElementById("adults").value;
+    let children = document.getElementById("children").value;
+    let price = calc(adults, children);
+    alert(price);
+  }
+} 
+        </script>
+</head>
+<body>
+    <div>
+<section>
+<h1>The Eiffel Tower</h1>
+<a href="https://sololearnassets.azureedge.net/eiffel-tower.jpg" target="_blank" id="imageTag">
+<img  src="https://sololearnassets.azureedge.net/eiffel-tower.jpg" alt=" eiffel tower" width=50%>
+</a>
+<p>A paragraph about Eiffel Tower</p>
+The <strong>Eiffel</strong> Tower is a wrought iron tower that stands 1,063 ft (324 m) tall in Paris.
+Currently, the Eiffel Tower is the most visited monument in the world with over 7 million visitors a year.
+Visitors can choose to go up using the Tower lift or the stairs. There are 1,665 steps to the top.
+<p><b>Transport:</b></p>
+<ul>
+<li> Bus: lines 42, 69, 72, 82 and 87.</li>
+<li>Metro: Trocadero, Ecole militaire.</li>
+<li>Train: Champ de Mars - Tour Eiffel, line C.</li>
+</ul>
+<table border="1">
+<tr><th>Catagory</th><th>Price</th></tr>
+<tr><td><b>Adult</b></td><td>$12</td></tr>
+<tr><td>Children</td><td>$7</td></tr>
+</table>
+</section>
+</div>
+<div>
+<section id="buy">
+<form>
+<div class="form-section">
+    <label for="adult" >Adult:</label><br>
+<input type="number" class="number" id="adults"></div>
+<div class="form-section">
+    <label for="Children" class="form-section">Children:</label><br>
+<input type="number" class="number"  id="children"></div>
+<div class="form-section"><input type="button" class="button form-section" id="buyBtn"  value="buy"></div>
+</form>
+</section>
+</div>
+<footer>
+    <p>&copy Copyright</p>
+</footer>
+
+</body>
+</html>
